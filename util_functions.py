@@ -41,3 +41,19 @@ def decipher_text(ciphered_text: str) -> str:
     xored_text = xored_text_bytes.decode("ascii")
     result = de_xor_text(xored_text)
     return result
+
+
+def tests():
+    assert xor_chars(chr(11), chr(17)) == chr(26)
+    assert xor_chars(chr(56), chr(3)) == chr(59)
+    assert xor_chars(chr(112), chr(42)) == chr(90)
+    assert xor_chars(chr(158), chr(31)) == chr(129)
+    print("xor_chars OK")
+
+    random.seed(5)  # rand_char = 'A'
+    assert xor_text("Martin") == "A\x0c 35(/"
+    random.seed(24)  # rand_char = 'b'
+    assert xor_text("USERNAME") == "b71'0,#/'"
+    random.seed(21)  # rand_char = '*'
+    assert xor_text("abc42#?!") == "*KHI\x1e\x18\t\x15\x0b"
+    print("xor_text OK")
