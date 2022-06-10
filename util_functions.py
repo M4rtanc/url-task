@@ -56,4 +56,28 @@ def tests():
     assert xor_text("USERNAME") == "b71'0,#/'"
     random.seed(21)  # rand_char = '*'
     assert xor_text("abc42#?!") == "*KHI\x1e\x18\t\x15\x0b"
+    random.seed(77)  # rand_char = '@'
+    assert xor_text("pondeli") == "@0/.$%,)"
     print("xor_text OK")
+
+    assert de_xor_text(xor_text("Martin")) == "Martin"
+    assert de_xor_text(xor_text("USERNAME")) == "USERNAME"
+    assert de_xor_text(xor_text("abc42#?!")) == "abc42#?!"
+    assert de_xor_text(xor_text("pondeli")) == "pondeli"
+    print("de_xor_text OK")
+
+    random.seed(5)
+    assert cipher_text("Martin") == "QQwgMzUoLw=="
+    random.seed(24)
+    assert cipher_text("USERNAME") == "YjcxJzAsIy8n"
+    random.seed(21)
+    assert cipher_text("abc42#?!") == "KktISR4YCRUL"
+    random.seed(77)
+    assert cipher_text("pondeli") == "QDAvLiQlLCk="
+    print("cipher_text OK")
+
+    assert decipher_text(cipher_text("Martin")) == "Martin"
+    assert decipher_text(cipher_text("USERNAME")) == "USERNAME"
+    assert decipher_text(cipher_text("abc42#?!")) == "abc42#?!"
+    assert decipher_text(cipher_text("pondeli")) == "pondeli"
+    print("decipher_text OK")
