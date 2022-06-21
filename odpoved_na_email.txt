@@ -1,0 +1,10 @@
+Dobrý den,
+
+děkuji za informace k řešení.
+
+Teď když si zadání zpětně čtu, tak vidím že je tam použití argumentu URL popsáno jasně, nicméně předtím jsem si část zadání "...zadaného prostřednictvím argumentu URL" s nepochopením vyložil ve smyslu "... zadaného prostřednictvím argumentu funkce, která zpracovává URL". Z toho důvodů mne potom ani nedával význam druhý argument "argName", a namísto toho abych se na tuto nejasnost raději doptal, jsem ji považoval za překlep a s identifikátorem uživatele dále pracoval jako se součástí URL.
+
+Do repozitáře jsem teď ještě rychle přidal soubor "main_corrected.py", kde už by mělo být zpracování identifikátoru uživatele pomocí argumentu URL správné.
+
+S pozdravem,
+Martin Húsek
